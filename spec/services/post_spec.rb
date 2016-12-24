@@ -1,7 +1,9 @@
 require "spec_helper"
 
 describe Post do
-  it "responds to foo" do
-    expect(described_class).to respond_to(:foo)
+  describe "::foo" do
+    it "returns bar" do
+      expect(described_class.foo).to eq("bar")
+    end
   end
 end
