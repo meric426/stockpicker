@@ -1,8 +1,10 @@
 require 'simplecov'
 SimpleCov.start
 
-require 'codecov'
-SimpleCov.formatter = SimpleCov::Formatter::Codecov
+if ENV['CIRCLECI']
+  require 'codecov'
+  SimpleCov.formatter = SimpleCov::Formatter::Codecov
+end
 
 Dir[File.join(File.dirname(__FILE__), '..', 'lib', '**', '*.rb')].each do |f|
   require f
