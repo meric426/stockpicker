@@ -1,3 +1,9 @@
+require 'simplecov'
+SimpleCov.start
+
+require 'codecov'
+SimpleCov.formatter = SimpleCov::Formatter::Codecov
+
 Dir[File.join(File.dirname(__FILE__), '..', 'lib', '**', '*.rb')].each do |f|
   require f
 end
